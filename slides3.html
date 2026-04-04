@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agile培训计划 - Scrum框架</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+        
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            overflow: hidden;
+        }
+        
+        .slide {
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            padding: 80px 100px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .slide.active {
+            opacity: 1;
+            z-index: 1;
+        }
+        
+        .slide-title {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #ffffff;
+        }
+        
+        .slide-content {
+            font-size: 1.5rem;
+            line-height: 1.8;
+            max-width: 1200px;
+            margin: 0 auto;
+            color: #ffffff;
+        }
+        
+        .slide-content ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .slide-content li {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+            position: relative;
+            color: #ffffff;
+        }
+        
+        .slide-content li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #ffffff;
+            font-weight: bold;
+        }
+        
+        .slide-subtitle {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+        
+        .slide-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+        
+        .slide-card {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 2rem;
+            border-radius: 12px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+        }
+        
+        .navigation {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .nav-btn {
+            background: rgba(255, 255, 255, 0.25);
+            border: none;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            backdrop-filter: blur(15px);
+            transition: all 0.3s ease;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .nav-btn:hover {
+            background: rgba(255, 255, 255, 0.35);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        .slide-number {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            background: rgba(255, 255, 255, 0.25);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            z-index: 100;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        /* DBS品牌配色方案 */
+        .bg-dbs-red { background: linear-gradient(135deg, #D22630 0%, #A61C24 100%); }
+        .bg-dbs-blue { background: linear-gradient(135deg, #0055A4 0%, #003D7C 100%); }
+        .bg-dbs-dark-blue { background: linear-gradient(135deg, #003366 0%, #001F3F 100%); }
+        .bg-dbs-light-blue { background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%); }
+        .bg-dbs-purple { background: linear-gradient(135deg, #6A5ACD 0%, #483D8B 100%); }
+        .bg-dbs-teal { background: linear-gradient(135deg, #008080 0%, #006666 100%); }
+        .bg-dbs-green { background: linear-gradient(135deg, #228B22 0%, #006400 100%); }
+        .bg-dbs-dark { background: linear-gradient(135deg, #2C3E50 0%, #1A2530 100%); }
+    </style>
+</head>
+<body class="text-white">
+    <!-- 幻灯片1：封面 -->
+    <div class="slide active bg-dbs-red" id="slide1">
+        <div class="slide-content text-center">
+            <h1 class="slide-title">Agile培训计划</h1>
+            <h2 class="slide-subtitle">Scrum框架深度解析</h2>
+            <p class="text-2xl opacity-95 mt-4 text-white">一小时掌握敏捷基础与实践</p>
+        </div>
+    </div>
+
+    <!-- 幻灯片2：培训目标 -->
+    <div class="slide bg-dbs-blue" id="slide2">
+        <div class="slide-content">
+            <h1 class="slide-title">培训目标</h1>
+            <p class="text-center mb-8 opacity-95 text-white">帮助团队成员理解Agile核心概念，掌握Jira基本操作，熟悉敏捷会议流程，为团队的敏捷实践奠定基础。</p>
+            
+            <div class="slide-grid">
+                <div class="slide-card text-center">
+                    <h3 class="slide-subtitle">15分钟</h3>
+                    <p class="text-xl opacity-95 text-white">Agile基础知识</p>
+                </div>
+                <div class="slide-card text-center">
+                    <h3 class="slide-subtitle">20分钟</h3>
+                    <p class="text-xl opacity-95 text-white">Jira的使用</p>
+                </div>
+                <div class="slide-card text-center">
+                    <h3 class="slide-subtitle">25分钟</h3>
+                    <p class="text-xl opacity-95 text-white">Agile会议 + 问答</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 幻灯片3：Agile基础知识 -->
+    <div class="slide bg-dbs-dark-blue" id="slide3">
+        <div class="slide-content">
+            <h1 class="slide-title">Agile基础知识</h1>
+            <div class="slide-grid">
+                <div class="slide-card">
+                    <h3 class="slide-subtitle">Agile起源与发展</h3>
+                    <ul>
+                        <li>2001年敏捷宣言的诞生</li>
+                        <li>传统瀑布模型的局限性</li>
+                        <li>Agile的适用场景</li>
+                    </ul>
+                </div>
+                <div class="slide-card">
+                    <h3 class="slide-subtitle">为什么需要敏捷开发</h3>
+                    <p>传统瀑布模型在快速变化的市场环境中面临诸多挑战，促使了敏捷开发方法的诞生。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 幻灯片4：传统瀑布模型的局限性 -->
+    <div class="slide bg-dbs-purple" id="slide4">
+        <div class="slide-content">
+            <h1 class="slide-title">传统瀑布模型的局限性</h1>
+            <div class="max-w-5xl mx-auto">
+                <div class="slide-grid">
+                    <div class="slide-card">
+                        <h3 class="slide-subtitle">需求与变更</h3>
+                        <ul>
+                            <li>需求变更困难，缺乏灵活性</li>
+                            <li>难以适应快速变化的市场需求</li>
+                            <li>变更需求需要重新走完整流程</li>
+                        </ul>
+                    </div>
+                    <div class="slide-card">
+                        <h3 class="slide-subtitle">交付与反馈</h3>
+                        <ul>
+                            <li>交付周期长，反馈延迟</li>
+                            <li>客户参与度低，缺乏持续反馈</li>
+                            <li>可能导致产品与市场需求脱节</li>
+                        </ul>
+                    </div>
+                    <div class="slide-card">
+                        <h3 class="slide-subtitle">风险与质量</h3>
+                        <ul>
+                            <li>风险集中在项目后期</li>
+                            <li>测试阶段发现问题修复成本高</li>
+                            <li>问题发现晚，修复影响范围大</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 幻灯片5：Agile核心价值观 -->
+    <div class="slide bg-dbs-light-blue" id="slide5">
+        <div class="slide-content">
+            <h1 class="slide-title">Agile核心价值观</h1>
+            <div class="max-w-4xl mx-auto">
+                <ul>
+                    <li><strong>个体与互动</strong> 高于 流程与工具</li>
+                    <li><strong>工作的软件</strong> 高于 详尽的文档</li>
+                    <li><strong>客户合作</strong> 高于 合同谈判</li>
+                    <li><strong>响应变化</strong> 高于 遵循计划</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 幻灯片6：Scrum框架概览 -->
+    <div class="slide bg-dbs-teal" id="slide6">
+        <div class="slide-content">
+            <h1 class="slide-title">Scrum框架概览</h1>
+            <div class="slide-grid">
+                <div class="slide-card">
+                    <h3 class="slide-subtitle">三个角色</h3>
+                    <ul>
+                        <li>Product Owner</li>
+                        <li>Scrum Master</li>
+                        <li>开发团队</li>
+                    </ul>
+                </div>
+                <div class="slide-card">
+                    <h3 class="slide-subtitle">三个工件</h3>
+                    <ul>
+                        <li>Product Backlog</li>
+                        <li>Sprint Backlog</li>
+                        <li>Increment</li>
+                    </ul>
+                </div>
+                <div class="slide-card">
+                    <h3 class="slide-subtitle">重要事件</h3>
+                    <ul>
+                        <li>Sprint规划</li>
+                        <li>每日站会</li>
+                        <li>Sprint Review</li>
+                        <li>Sprint回顾</li>
+                        <li>Sprint</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 幻灯片7：敏捷估算与计划 -->
+    <div class="slide bg-dbs-green" id="slide7">
+        <div class="slide-content">
+            <h1 class="slide-title">敏捷估算与计划</h1>
+            <div class="slide-grid">
+                <div class="slide-card">
+                    <h3 class="slide-subtitle">故事点与相对估算</h3>
+                    <p>使用相对大小而非绝对时间进行估算</p>
+                </div>
+                <div class="slide-card">
+                    <h3 class="slide-subtitle">速度（Velocity）的概念与应用</h3>
+                    <p>团队在一个Sprint内完成的故事点总数</p>
+                </div>
+                <div class="slide-card">
+                    <h3 class="slide-subtitle">燃尽图（Burndown Chart）的解读</h3>
+                    <p>可视化Sprint进度的工具</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 幻灯片8：Jira基础导航 -->
+    <div class="slide bg-dbs-dark" id="slide8">
+        <div class="slide-content">
+            <h1 class="slide-title">Jira的使用</h1>
+            <div class="slide-grid">
+                <div class="slide-card">
+                    <h3 class="slide-subtitle">Jira基础导航</h3>
+                    <ul>
+                        <li>项目概览与仪表盘</li>
+                        <li>问题类型与状态流</li>
+                        <li>过滤器与看板视图</li>
+                    </ul>
+                </div>
+                <div class="slide-card">
+                    <h3 class="slide-subtitle">创建与管理工作项</h3>
+                    <ul>
+                        <li>创建用户故事（User Story）</li>
+                        <li>分解任务（Task）与子任务</li>
+                        <li>关联缺陷（Bug）与故事</li>
+                        <li>分配负责人与设置截止日期</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 幻灯片9：JIRA Ticket 关键字段 -->
+    <div class="slide bg-dbs-orange" id="slide9">
+        <div class="slide-content">
+            <h1 class="slide-title">JIRA Ticket 关键字段</h1>
+            <!--<div class="slide-grid" style="grid-template-columns: repeat(3, 1fr);">
+                <div class="slide-card">
+                    <h3 class="slide-subtitle">Epic</h3>
+                    <p>大功能块，包含多个用户故事</p>
+                </div>
+                <div class="slide-card">
+                    <h3 class="slide-subtitle">Feature</h3>
+                    <p>小功能块，包含多个任务</p>
+                </div>
+                <div class="slide-card">
+                    <h3 class="slide-subtitle">Story</h3>
+                    <p>用户故事，描述用户需求</p>
+                </div>
+                <div class="slide-card">
+                    <h3 class="slide-subtitle">Task</h3>
+                    <p>任务，分解用户故事</p>
+                </div>
+                <div class="slide-card">
+                    <h3 class="slide-subtitle">Sub-task</h3>
+                    <p>子任务，分解任务</p>
+                </div>
+            </div>-->
+        </div>
+    </div>
+
+    <!-- 幻灯片10：Sprint管理 -->
+    <div class="slide bg-dbs-blue" id="slide10">
+        <div class="slide-content">
+            <h1 class="slide-title">Sprint管理</h1>
+            <div class="slide-grid">
+                <div class="slide-card">
+                    <h3 class="slide-subtitle">Sprint管理流程</h3>
+                    <ul>
+                        <li>创建Sprint与设置时间盒</li>
+                        <li>从Product Backlog规划Sprint</li>
+                        <li>每日更新任务状态</li>
+                        <li>Sprint结束与回顾</li>
+                    </ul>
+                </div>
+                <div class="slide-card text-center">
+                    <h3 class="slide-subtitle">最佳实践</h3>
+                    <p class="text-xl opacity-95 text-white">保持Sprint长度一致，确保团队有稳定的节奏</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 幻灯片11：Agile相关会议 -->
+    <div class="slide bg-dbs-purple" id="slide11">
+        <div class="slide-content">
+            <h1 class="slide-title">Agile相关会议介绍</h1>
+            <div class="slide-grid">
+                <div class="slide-card">
+                    <h3 class="slide-subtitle">Sprint规划会议</h3>
+                    <p><strong>时间：</strong> 1小时/两周Sprint</p>
+                    <p><strong>目的：</strong> 确定Sprint目标与选择待办项</p>
+                    <p><strong>参与者：</strong> 全体Scrum团队</p>
+                    <p><strong>流程：</strong> 澄清需求 → 估算 → 承诺</p>
+                </div>
+                <div class="slide-card">
+                    <h3 class="slide-subtitle">每日站会</h3>
+                    <p><strong>时间：</strong> 15分钟</p>
+                    <p><strong>目的：</strong> 同步进度，识别障碍</p>
+                    <p><strong>参与者：</strong> 全体Scrum团队</p>
+                    <p><strong>三个问题：</strong> 完成了什么？计划做什么？遇到什么障碍？</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 幻灯片12：更多会议 -->
+    <div class="slide bg-dbs-teal" id="slide12">
+        <div class="slide-content">
+            <h1 class="slide-title">Agile会议（续）</h1>
+            <div class="slide-grid">
+                <div class="slide-card">
+                    <h3 class="slide-subtitle">Sprint回顾会议</h3>
+                    <p><strong>时间：</strong> 1小时/两周Sprint</p>
+                    <p><strong>目的：</strong> 持续改进团队流程</p>
+                    <p><strong>参与者：</strong> 全体Scrum团队</p>
+                    <p><strong>流程：</strong> 回顾做得好的 → 待改进的 → 制定改进计划</p>
+                </div>
+                <div class="slide-card">
+                    <h3 class="slide-subtitle">产品待办项梳理会议</h3>
+                    <p><strong>时间：</strong> 按需召开</p>
+                    <p><strong>目的：</strong> 优化Product Backlog</p>
+                    <p><strong>参与者：</strong> Product Owner + 开发团队</p>
+                    <p><strong>活动：</strong> 添加、移除、重排、细化待办项</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 幻灯片13：互动问答与实践演示 -->
+    <div class="slide bg-dbs-red" id="slide13">
+        <div class="slide-content">
+            <h1 class="slide-title">互动问答与实践演示</h1>
+            <div class="slide-grid">
+                <div class="slide-card">
+                    <h3 class="slide-subtitle">常见问题解答</h3>
+                    <p>针对团队成员在敏捷实践中遇到的常见问题进行解答</p>
+                </div>
+                <div class="slide-card">
+                    <h3 class="slide-subtitle">Jira实际操作演示</h3>
+                    <p>现场演示Jira的关键功能和最佳实践</p>
+                </div>
+                <div class="slide-card">
+                    <h3 class="slide-subtitle">敏捷实践小贴士</h3>
+                    <p>分享实用的敏捷实践技巧和经验</p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-8">
+                <p class="text-xl opacity-95 text-white">© 2026 Agile培训计划. 保留所有权利.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <button class="nav-btn" onclick="prevSlide()">
+            <i class="fa fa-chevron-left"></i> 上一页
+        </button>
+        <button class="nav-btn" onclick="nextSlide()">
+            下一页 <i class="fa fa-chevron-right"></i>
+        </button>
+    </div>
+
+    <div class="slide-number">
+        <span id="current-slide">1</span> / <span id="total-slides">13</span>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+            
+            document.getElementById('current-slide').textContent = index + 1;
+            currentSlide = index;
+        }
+        
+        function nextSlide() {
+            if (currentSlide < totalSlides - 1) {
+                showSlide(currentSlide + 1);
+            }
+        }
+        
+        function prevSlide() {
+            if (currentSlide > 0) {
+                showSlide(currentSlide - 1);
+            }
+        }
+        
+        // 键盘导航
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') {
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                prevSlide();
+            }
+        });
+        
+        // 初始化
+        document.getElementById('total-slides').textContent = 13;
+        showSlide(0);
+    </script>
+</body>
+</html>节</li>
+                        </ul>
+                    </div>
+                    <div class="slide-card">
+                        <h3 class="slide-subtitle">风险与质量</h3>
+                        <ul>
+                            <li>风险集中在项目后期</li>
+                            <li>测试阶段发现问题修复成本高</li>
+                            <li>问题发现晚，修复影响范围大</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 幻灯片5：Agile核心价值观 -->
+    <div class="slide bg-dbs-light-blue" id="slide5">
+        <div class="slide-content">
+            <h1 class="slide-title">Agile核心价值观</h1>
+            <div class="max-w-4xl mx-auto">
+                <ul>
+                    <li><strong>个体与互动</strong> 高于 流程与工具</li>
+                    <li><strong>工作的软件</strong> 高于 详尽的文档</li>
+                    <li><strong>客户合作</strong> 高于 合同谈判</li>
+                    <li><strong>响应变化</strong> 高于 遵循计划</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 幻灯片6：Scrum框架概览 -->
+    <div class="slide bg-dbs-teal" id="slide6">
+        <div class="slide-content">
+            <h1 class="slide-title">Scrum框架概览</h1>
+            <div class="slide-grid">
+                <div class="slide-card">
+                    <h3 class="slide-subtitle">三个角色</h3>
+                    <ul>
+                        <li>Product Owner</li>
+                        <li>Scrum Master</li>
+                        <li>开发团队</li>
+                    </ul>
+                </div>
+                <div class="slide-card">
+                    <h3 class="slide-subtitle">三个工件</h3>
+                    <ul>
+                        <li>Product Backlog</li>
+                        <li>Sprint Backlog</li>
+                        <li>Increment</li>
+                    </ul>
+                </div>
+                <div class="slide-card">
+                    <h3 class="slide-subtitle">五个事件</h3>
+                    <ul>
+                        <li>Sprint规划</li>
+                        <li>每日站会</li>
+                        <li>Sprint评审</li>
+                        <li>Sprint回顾</li>
+                        <li>Sprint</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 幻灯片7：敏捷估算与计划 -->
+    <div class="slide bg-dbs-green" id="slide7">
+        <div class="slide-content">
+            <h1 class="slide-title">敏捷估算与计划</h1>
+            <div class="slide-grid">
+                <div class="slide-card">
+                    <h3 class="slide-subtitle">故事点与相对估算</h3>
+                    <p>使用相对大小而非绝对时间进行估算</p>
+                </div>
+                <div class="slide-card">
+                    <h3 class="slide-subtitle">速度（Velocity）的概念与应用</h3>
+                    <p>团队在一个Sprint内完成的故事点总数</p>
+                </div>
+                <div class="slide-card">
+                    <h3 class="slide-subtitle">燃尽图（Burndown Chart）的解读</h3>
+                    <p>可视化Sprint进度的工具</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 幻灯片8：Jira的使用 -->
+    <div class="slide bg-dbs-dark" id="slide8">
+        <div class="slide-content">
+            <h1 class="slide-title">Jira的使用</h1>
+            <div class="slide-grid">
+                <div class="slide-card">
+                    <h3 class="slide-subtitle">Jira基础导航</h3>
+                    <ul>
+                        <li>项目概览与仪表盘</li>
+                        <li>问题类型与状态流</li>
+                        <li>过滤器与看板视图</li>
+                    </ul>
+                </div>
+                <div class="slide-card">
+                    <h3 class="slide-subtitle">创建与管理工作项</h3>
+                    <ul>
+                        <li>创建用户故事（User Story）</li>
+                        <li>分解任务（Task）与子任务</li>
+                        <li>关联缺陷（Bug）与故事</li>
+                        <li>分配负责人与设置截止日期</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 幻灯片9：Sprint管理 -->
+    <div class="slide bg-dbs-blue" id="slide9">
+        <div class="slide-content">
+            <h1 class="slide-title">Sprint管理</h1>
+            <div class="slide-grid">
+                <div class="slide-card">
+                    <h3 class="slide-subtitle">Sprint管理流程</h3>
+                    <ul>
+                        <li>创建Sprint与设置时间盒</li>
+                        <li>从Product Backlog规划Sprint</li>
+                        <li>每日更新任务状态</li>
+                        <li>Sprint结束与回顾</li>
+                    </ul>
+                </div>
+                <div class="slide-card text-center">
+                    <h3 class="slide-subtitle">最佳实践</h3>
+                    <p class="text-xl opacity-95 text-white">保持Sprint长度一致，确保团队有稳定的节奏</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 幻灯片10：Agile相关会议 -->
+    <div class="slide bg-dbs-purple" id="slide10">
+        <div class="slide-content">
+            <h1 class="slide-title">Agile相关会议介绍</h1>
+            <div class="slide-grid">
+                <div class="slide-card">
+                    <h3 class="slide-subtitle">Sprint规划会议</h3>
+                    <p><strong>时间：</strong> 1小时/两周Sprint</p>
+                    <p><strong>目的：</strong> 确定Sprint目标与选择待办项</p>
+                    <p><strong>参与者：</strong> 全体Scrum团队</p>
+                    <p><strong>流程：</strong> 澄清需求 → 估算 → 承诺</p>
+                </div>
+                <div class="slide-card">
+                    <h3 class="slide-subtitle">每日站会</h3>
+                    <p><strong>时间：</strong> 15分钟</p>
+                    <p><strong>目的：</strong> 同步进度，识别障碍</p>
+                    <p><strong>参与者：</strong> 全体Scrum团队</p>
+                    <p><strong>三个问题：</strong> 完成了什么？计划做什么？遇到什么障碍？</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 幻灯片11：更多会议 -->
+    <div class="slide bg-dbs-teal" id="slide11">
+        <div class="slide-content">
+            <h1 class="slide-title">Agile会议（续）</h1>
+            <div class="slide-grid">
+                <div class="slide-card">
+                    <h3 class="slide-subtitle">Sprint回顾会议</h3>
+                    <p><strong>时间：</strong> 1小时/两周Sprint</p>
+                    <p><strong>目的：</strong> 持续改进团队流程</p>
+                    <p><strong>参与者：</strong> 全体Scrum团队</p>
+                    <p><strong>流程：</strong> 回顾做得好的 → 待改进的 → 制定改进计划</p>
+                </div>
+                <div class="slide-card">
+                    <h3 class="slide-subtitle">产品待办项梳理会议</h3>
+                    <p><strong>时间：</strong> 按需召开</p>
+                    <p><strong>目的：</strong> 优化Product Backlog</p>
+                    <p><strong>参与者：</strong> Product Owner + 开发团队</p>
+                    <p><strong>活动：</strong> 添加、移除、重排、细化待办项</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 幻灯片12：总结与问答 -->
+    <div class="slide bg-dbs-red" id="slide12">
+        <div class="slide-content">
+            <h1 class="slide-title">互动问答与实践演示</h1>
+            <div class="slide-grid">
+                <div class="slide-card">
+                    <h3 class="slide-subtitle">常见问题解答</h3>
+                    <p>针对团队成员在敏捷实践中遇到的常见问题进行解答</p>
+                </div>
+                <div class="slide-card">
+                    <h3 class="slide-subtitle">Jira实际操作演示</h3>
+                    <p>现场演示Jira的关键功能和最佳实践</p>
+                </div>
+                <div class="slide-card">
+                    <h3 class="slide-subtitle">敏捷实践小贴士</h3>
+                    <p>分享实用的敏捷实践技巧和经验</p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-8">
+                <p class="text-xl opacity-95 text-white">© 2026 Agile培训计划. 保留所有权利.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <button class="nav-btn" onclick="prevSlide()">
+            <i class="fa fa-chevron-left"></i> 上一页
+        </button>
+        <button class="nav-btn" onclick="nextSlide()">
+            下一页 <i class="fa fa-chevron-right"></i>
+        </button>
+    </div>
+
+    <div class="slide-number">
+        <span id="current-slide">1</span> / <span id="total-slides">11</span>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+            
+            document.getElementById('current-slide').textContent = index + 1;
+            currentSlide = index;
+        }
+        
+        function nextSlide() {
+            if (currentSlide < totalSlides - 1) {
+                showSlide(currentSlide + 1);
+            }
+        }
+        
+        function prevSlide() {
+            if (currentSlide > 0) {
+                showSlide(currentSlide - 1);
+            }
+        }
+        
+        // 键盘导航
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') {
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                prevSlide();
+            }
+        });
+        
+        // 初始化
+        document.getElementById('total-slides').textContent = 12;
+        showSlide(0);
+    </script>
+</body>
+</html>

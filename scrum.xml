@@ -1,0 +1,899 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<p:presentation xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"
+                xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+                xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main">
+
+<!-- 幻灯片1：封面 -->
+<p:sld>
+  <p:cSld>
+    <p:spTree>
+      <p:nvGrpSpPr>
+        <p:cNvPr id="1" name=""/>
+        <p:cNvGrpSpPr/>
+        <p:nvPr/>
+      </p:nvGrpSpPr>
+      <p:grpSpPr>
+        <a:xfrm>
+          <a:off x="0" y="0"/>
+          <a:ext cx="9144000" cy="6858000"/>
+          <a:chOff x="0" y="0"/>
+          <a:chExt cx="9144000" cy="6858000"/>
+        </a:xfrm>
+      </p:grpSpPr>
+      
+      <!-- 标题 -->
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="2" name="标题 1"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="457200" y="914400"/>
+            <a:ext cx="8230000" cy="1371600"/>
+          </a:xfrm>
+          <a:noFill/>
+          <a:ln w="0">
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr rtlCol="0" anchor="ctr"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="ctr"/>
+            <a:r>
+              <a:rPr lang="zh-CN" sz="4400" b="1"/>
+              <a:t>Agile培训计划</a:t>
+            </a:r>
+            <a:br/>
+            <a:r>
+              <a:rPr lang="zh-CN" sz="3200"/>
+              <a:t>Scrum框架</a:t>
+            </a:r>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      
+      <!-- 副标题 -->
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="3" name="副标题"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="1828800" y="3429000"/>
+            <a:ext cx="5486400" cy="914400"/>
+          </a:xfrm>
+          <a:noFill/>
+          <a:ln w="0">
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr rtlCol="0" anchor="ctr"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="ctr"/>
+            <a:r>
+              <a:rPr lang="zh-CN" sz="2400"/>
+              <a:t>一小时掌握敏捷基础与实践</a:t>
+            </a:r>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+    </p:spTree>
+  </p:cSld>
+</p:sld>
+
+<!-- 幻灯片2：培训目标 -->
+<p:sld>
+  <p:cSld>
+    <p:spTree>
+      <p:nvGrpSpPr>
+        <p:cNvPr id="4" name=""/>
+        <p:cNvGrpSpPr/>
+        <p:nvPr/>
+      </p:nvGrpSpPr>
+      <p:grpSpPr>
+        <a:xfrm>
+          <a:off x="0" y="0"/>
+          <a:ext cx="9144000" cy="6858000"/>
+          <a:chOff x="0" y="0"/>
+          <a:chExt cx="9144000" cy="6858000"/>
+        </a:xfrm>
+      </p:grpSpPr>
+      
+      <!-- 标题 -->
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="5" name="标题"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="457200" y="457200"/>
+            <a:ext cx="8230000" cy="914400"/>
+          </a:xfrm>
+          <a:noFill/>
+          <a:ln w="0">
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr rtlCol="0" anchor="ctr"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="ctr"/>
+            <a:r>
+              <a:rPr lang="zh-CN" sz="3600" b="1"/>
+              <a:t>培训目标</a:t>
+            </a:r>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      
+      <!-- 内容 -->
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="6" name="内容"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="914400" y="1828800"/>
+            <a:ext cx="7315200" cy="2286000"/>
+          </a:xfrm>
+          <a:noFill/>
+          <a:ln w="0">
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr rtlCol="0" anchor="t"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:r>
+              <a:rPr lang="zh-CN" sz="2000"/>
+              <a:t>帮助团队成员理解Agile核心概念，掌握Jira基本操作，熟悉敏捷会议流程，为团队的敏捷实践奠定基础。</a:t>
+            </a:r>
+          </a:p>
+          <a:p>
+            <a:pPr algn="ctr"/>
+            <a:r>
+              <a:rPr lang="zh-CN" sz="2200" b="1"/>
+              <a:t>培训大纲（60分钟）</a:t>
+            </a:r>
+          </a:p>
+          <a:p>
+            <a:r>
+              <a:rPr lang="zh-CN" sz="1800"/>
+              <a:t>• 15分钟 - Agile基础知识</a:t>
+            </a:r>
+          </a:p>
+          <a:p>
+            <a:r>
+              <a:rPr lang="zh-CN" sz="1800"/>
+              <a:t>• 20分钟 - Jira的使用</a:t>
+            </a:r>
+          </a:p>
+          <a:p>
+            <a:r>
+              <a:rPr lang="zh-CN" sz="1800"/>
+              <a:t>• 25分钟 - Agile会议 + 问答</a:t>
+            </a:r>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+    </p:spTree>
+  </p:cSld>
+</p:sld>
+
+<!-- 幻灯片3：Agile基础知识 -->
+<p:sld>
+  <p:cSld>
+    <p:spTree>
+      <p:nvGrpSpPr>
+        <p:cNvPr id="7" name=""/>
+        <p:cNvGrpSpPr/>
+        <p:nvPr/>
+      </p:nvGrpSpPr>
+      <p:grpSpPr>
+        <a:xfrm>
+          <a:off x="0" y="0"/>
+          <a:ext cx="9144000" cy="6858000"/>
+          <a:chOff x="0" y="0"/>
+          <a:chExt cx="9144000" cy="6858000"/>
+        </a:xfrm>
+      </p:grpSpPr>
+      
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="8" name="标题"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="457200" y="457200"/>
+            <a:ext cx="8230000" cy="914400"/>
+          </a:xfrm>
+          <a:noFill/>
+          <a:ln w="0">
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr rtlCol="0" anchor="ctr"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="ctr"/>
+            <a:r>
+              <a:rPr lang="zh-CN" sz="3600" b="1"/>
+              <a:t>Agile基础知识</a:t>
+            </a:r>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="9" name="内容1"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="914400" y="1371600"/>
+            <a:ext cx="3657600" cy="1828800"/>
+          </a:xfrm>
+          <a:noFill/>
+          <a:ln w="0">
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr rtlCol="0" anchor="t"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:r>
+              <a:rPr lang="zh-CN" sz="2000" b="1"/>
+              <a:t>Agile起源与发展</a:t>
+            </a:r>
+          </a:p>
+          <a:p>
+            <a:r>
+              <a:rPr lang="zh-CN" sz="1800"/>
+              <a:t>• 2001年敏捷宣言的诞生</a:t>
+            </a:r>
+          </a:p>
+          <a:p>
+            <a:r>
+              <a:rPr lang="zh-CN" sz="1800"/>
+              <a:t>• 传统瀑布模型的局限性</a:t>
+            </a:r>
+          </a:p>
+          <a:p>
+            <a:r>
+              <a:rPr lang="zh-CN" sz="1800"/>
+              <a:t>• Agile的适用场景</a:t>
+            </a:r>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="10" name="内容2"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="4572000" y="1371600"/>
+            <a:ext cx="3657600" cy="1828800"/>
+          </a:xfrm>
+          <a:noFill/>
+          <a:ln w="0">
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr rtlCol="0" anchor="t"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:r>
+              <a:rPr lang="zh-CN" sz="2000" b="1"/>
+              <a:t>Scrum框架概览</a:t>
+            </a:r>
+          </a:p>
+          <a:p>
+            <a:r>
+              <a:rPr lang="zh-CN" sz="1800"/>
+              <a:t>• 三个角色</a:t>
+            </a:r>
+          </a:p>
+          <a:p>
+            <a:r>
+              <a:rPr lang="zh-CN" sz="1800"/>
+              <a:t>• 三个工件</a:t>
+            </a:r>
+          </a:p>
+          <a:p>
+            <a:r>
+              <a:rPr lang="zh-CN" sz="1800"/>
+              <a:t>• 五个事件</a:t>
+            </a:r>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+    </p:spTree>
+  </p:cSld>
+</p:sld>
+
+<!-- 幻灯片4：Agile核心价值观 -->
+<p:sld>
+  <p:cSld>
+    <p:spTree>
+      <p:nvGrpSpPr>
+        <p:cNvPr id="11" name=""/>
+        <p:cNvGrpSpPr/>
+        <p:nvPr/>
+      </p:nvGrpSpPr>
+      <p:grpSpPr>
+        <a:xfrm>
+          <a:off x="0" y="0"/>
+          <a:ext cx="9144000" cy="6858000"/>
+          <a:chOff x="0" y="0"/>
+          <a:chExt cx="9144000" cy="6858000"/>
+        </a:xfrm>
+      </p:grpSpPr>
+      
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="12" name="标题"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="457200" y="457200"/>
+            <a:ext cx="8230000" cy="914400"/>
+          </a:xfrm>
+          <a:noFill/>
+          <a:ln w="0">
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr rtlCol="0" anchor="ctr"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="ctr"/>
+            <a:r>
+              <a:rPr lang="zh-CN" sz="3600" b="1"/>
+              <a:t>Agile核心价值观</a:t>
+            </a:r>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="13" name="内容"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="914400" y="1371600"/>
+            <a:ext cx="7315200" cy="3657600"/>
+          </a:xfrm>
+          <a:noFill/>
+          <a:ln w="0">
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr rtlCol="0" anchor="t"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:r>
+              <a:rPr lang="zh-CN" sz="2000"/>
+              <a:t>• 个体与互动 高于 流程与工具</a:t>
+            </a:r>
+          </a:p>
+          <a:p>
+            <a:r>
+              <a:rPr lang="zh-CN" sz="2000"/>
+              <a:t>• 工作的软件 高于 详尽的文档</a:t>
+            </a:r>
+          </a:p>
+          <a:p>
+            <a:r>
+              <a:rPr lang="zh-CN" sz="2000"/>
+              <a:t>• 客户合作 高于 合同谈判</a:t>
+            </a:r>
+          </a:p>
+          <a:p>
+            <a:r>
+              <a:rPr lang="zh-CN" sz="2000"/>
+              <a:t>• 响应变化 高于 遵循计划</a:t>
+            </a:r>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+    </p:spTree>
+  </p:cSld>
+</p:sld>
+
+<!-- 幻灯片5：Jira的使用 -->
+<p:sld>
+  <p:cSld>
+    <p:spTree>
+      <p:nvGrpSpPr>
+        <p:cNvPr id="14" name=""/>
+        <p:cNvGrpSpPr/>
+        <p:nvPr/>
+      </p:nvGrpSpPr>
+      <p:grpSpPr>
+        <a:xfrm>
+          <a:off x="0" y="0"/>
+          <a:ext cx="9144000" cy="6858000"/>
+          <a:chOff x="0" y="0"/>
+          <a:chExt cx="9144000" cy="6858000"/>
+        </a:xfrm>
+      </p:grpSpPr>
+      
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="15" name="标题"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="457200" y="457200"/>
+            <a:ext cx="8230000" cy="914400"/>
+          </a:xfrm>
+          <a:noFill/>
+          <a:ln w="0">
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr rtlCol="0" anchor="ctr"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="ctr"/>
+            <a:r>
+              <a:rPr lang="zh-CN" sz="3600" b="1"/>
+              <a:t>Jira的使用</a:t>
+            </a:r>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="16" name="内容1"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="914400" y="1371600"/>
+            <a:ext cx="3657600" cy="1828800"/>
+          </a:xfrm>
+          <a:noFill/>
+          <a:ln w="0">
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr rtlCol="0" anchor="t"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:r>
+              <a:rPr lang="zh-CN" sz="2000" b="1"/>
+              <a:t>Jira基础导航</a:t>
+            </a:r>
+          </a:p>
+          <a:p>
+            <a:r>
+              <a:rPr lang="zh-CN" sz="1800"/>
+              <a:t>• 项目概览与仪表盘</a:t>
+            </a:r>
+          </a:p>
+          <a:p>
+            <a:r>
+              <a:rPr lang="zh-CN" sz="1800"/>
+              <a:t>• 问题类型与状态流</a:t>
+            </a:r>
+          </a:p>
+          <a:p>
+            <a:r>
+              <a:rPr lang="zh-CN" sz="1800"/>
+              <a:t>• 过滤器与看板视图</a:t>
+            </a:r>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="17" name="内容2"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="4572000" y="1371600"/>
+            <a:ext cx="3657600" cy="1828800"/>
+          </a:xfrm>
+          <a:noFill/>
+          <a:ln w="0">
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr rtlCol="0" anchor="t"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:r>
+              <a:rPr lang="zh-CN" sz="2000" b="1"/>
+              <a:t>Sprint管理</a:t>
+            </a:r>
+          </a:p>
+          <a:p>
+            <a:r>
+              <a:rPr lang="zh-CN" sz="1800"/>
+              <a:t>• 创建Sprint与设置时间盒</a:t>
+            </a:r>
+          </a:p>
+          <a:p>
+            <a:r>
+              <a:rPr lang="zh-CN" sz="1800"/>
+              <a:t>• 从Product Backlog规划Sprint</a:t>
+            </a:r>
+          </a:p>
+          <a:p>
+            <a:r>
+              <a:rPr lang="zh-CN" sz="1800"/>
+              <a:t>• 每日更新任务状态</a:t>
+            </a:r>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+    </p:spTree>
+  </p:cSld>
+</p:sld>
+
+<!-- 幻灯片6：Agile相关会议 -->
+<p:sld>
+  <p:cSld>
+    <p:spTree>
+      <p:nvGrpSpPr>
+        <p:cNvPr id="18" name=""/>
+        <p:cNvGrpSpPr/>
+        <p:nvPr/>
+      </p:nvGrpSpPr>
+      <p:grpSpPr>
+        <a:xfrm>
+          <a:off x="0" y="0"/>
+          <a:ext cx="9144000" cy="6858000"/>
+          <a:chOff x="0" y="0"/>
+          <a:chExt cx="9144000" cy="6858000"/>
+        </a:xfrm>
+      </p:grpSpPr>
+      
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="19" name="标题"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="457200" y="457200"/>
+            <a:ext cx="8230000" cy="914400"/>
+          </a:xfrm>
+          <a:noFill/>
+          <a:ln w="0">
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr rtlCol="0" anchor="ctr"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="ctr"/>
+            <a:r>
+              <a:rPr lang="zh-CN" sz="3600" b="1"/>
+              <a:t>Agile相关会议介绍</a:t>
+            </a:r>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="20" name="内容"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="914400" y="1371600"/>
+            <a:ext cx="7315200" cy="3657600"/>
+          </a:xfrm>
+          <a:noFill/>
+          <a:ln w="0">
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr rtlCol="0" anchor="t"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:r>
+              <a:rPr lang="zh-CN" sz="2000" b="1"/>
+              <a:t>Sprint规划会议</a:t>
+            </a:r>
+          </a:p>
+          <a:p>
+            <a:r>
+              <a:rPr lang="zh-CN" sz="1800"/>
+              <a:t>时间：2小时/两周Sprint</a:t>
+            </a:r>
+          </a:p>
+          <a:p>
+            <a:r>
+              <a:rPr lang="zh-CN" sz="1800"/>
+              <a:t>目的：确定Sprint目标与选择待办项</a:t>
+            </a:r>
+          </a:p>
+          <a:p>
+            <a:r>
+              <a:rPr lang="zh-CN" sz="1800"/>
+              <a:t>参与者：全体Scrum团队</a:t>
+            </a:r>
+          </a:p>
+          <a:p/>
+          <a:p>
+            <a:r>
+              <a:rPr lang="zh-CN" sz="2000" b="1"/>
+              <a:t>每日站会</a:t>
+            </a:r>
+          </a:p>
+          <a:p>
+            <a:r>
+              <a:rPr lang="zh-CN" sz="1800"/>
+              <a:t>时间：15分钟</a:t>
+            </a:r>
+          </a:p>
+          <a:p>
+            <a:r>
+              <a:rPr lang="zh-CN" sz="1800"/>
+              <a:t>目的：同步进度，识别障碍</a:t>
+            </a:r>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+    </p:spTree>
+  </p:cSld>
+</p:sld>
+
+<!-- 幻灯片7：互动问答 -->
+<p:sld>
+  <p:cSld>
+    <p:spTree>
+      <p:nvGrpSpPr>
+        <p:cNvPr id="21" name=""/>
+        <p:cNvGrpSpPr/>
+        <p:nvPr/>
+      </p:nvGrpSpPr>
+      <p:grpSpPr>
+        <a:xfrm>
+          <a:off x="0" y="0"/>
+          <a:ext cx="9144000" cy="6858000"/>
+          <a:chOff x="0" y="0"/>
+          <a:chExt cx="9144000" cy="6858000"/>
+        </a:xfrm>
+      </p:grpSpPr>
+      
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="22" name="标题"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="457200" y="457200"/>
+            <a:ext cx="8230000" cy="914400"/>
+          </a:xfrm>
+          <a:noFill/>
+          <a:ln w="0">
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr rtlCol="0" anchor="ctr"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="ctr"/>
+            <a:r>
+              <a:rPr lang="zh-CN" sz="3600" b="1"/>
+              <a:t>互动问答与实践演示</a:t>
+            </a:r>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="23" name="内容1"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="914400" y="1371600"/>
+            <a:ext cx="3657600" cy="1828800"/>
+          </a:xfrm>
+          <a:noFill/>
+          <a:ln w="0">
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr rtlCol="0" anchor="t"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:r>
+              <a:rPr lang="zh-CN" sz="2000" b="1"/>
+              <a:t>常见问题解答</a:t>
+            </a:r>
+          </a:p>
+          <a:p>
+            <a:r>
+              <a:rPr lang="zh-CN" sz="1800"/>
+              <a:t>针对团队成员在敏捷实践中遇到的常见问题进行解答</a:t>
+            </a:r>
+          </a:p>
+          <a:p/>
+          <a:p>
+            <a:r>
+              <a:rPr lang="zh-CN" sz="2000" b="1"/>
+              <a:t>Jira实际操作演示</a:t>
+            </a:r>
+          </a:p>
+          <a:p>
+            <a:r>
+              <a:rPr lang="zh-CN" sz="1800"/>
+              <a:t>现场演示Jira的关键功能和最佳实践</a:t>
+            </a:r>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="24" name="内容2"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="4572000" y="1371600"/>
+            <a:ext cx="3657600" cy="1828800"/>
+          </a:xfrm>
+          <a:noFill/>
+          <a:ln w="0">
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr rtlCol="0" anchor="t"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:r>
+              <a:rPr lang="zh-CN" sz="2000" b="1"/>
+              <a:t>培训准备建议</a:t>
+            </a:r>
+          </a:p>
+          <a:p>
+            <a:r>
+              <a:rPr lang="zh-CN" sz="1800"/>
+              <a:t>• 提前准备Jira测试环境账号</a:t>
+            </a:r>
+          </a:p>
+          <a:p>
+            <a:r>
+              <a:rPr lang="zh-CN" sz="1800"/>
+              <a:t>• 准备团队实际项目的案例</a:t>
+            </a:r>
+          </a:p>
+          <a:p>
+            <a:r>
+              <a:rPr lang="zh-CN" sz="1800"/>
+              <a:t>• 制作简洁的幻灯片或培训材料</a:t>
+            </a:r>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+    </p:spTree>
+  </p:cSld>
+</p:sld>
+
+<!-- 幻灯片8：结束页 -->
+<p:sld>
+  <p:cSld>
+    <p:spTree>
+      <p:nvGrpSpPr>
+        <p:cNvPr id="25" name=""/>
+        <p:cNvGrpSpPr/>
+        <p:nvPr/>
+      </p:nvGrpSpPr>
+      <p:grpSpPr>
+        <a:xfrm>
+          <a:off x="0" y="0"/>
+          <a:ext cx="9144000" cy="6858000"/>
+          <a:chOff x="0" y="0"/>
+          <a:chExt cx="9144000" cy="6858000"/>
+        </a:xfrm>
+      </p:grpSpPr>
+      
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="26" name="标题"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="457200" y="2286000"/>
+            <a:ext cx="8230000" cy="914400"/>
+          </a:xfrm>
+          <a:noFill/>
+          <a:ln w="0">
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr rtlCol="0" anchor="ctr"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="ctr"/>
+            <a:r>
+              <a:rPr lang="zh-CN" sz="4400" b="1"/>
+              <a:t>谢谢观看</a:t>
+            </a:r>
+          </a:p>
+          <a:p>
+            <a:pPr algn="ctr"/>
+            <a:r>
+              <a:rPr lang="zh-CN" sz="2400"/>
+              <a:t>Agile培训计划</a:t>
+            </a:r>
+          </a:p>
+          <a:p>
+            <a:pPr algn="ctr"/>
+            <a:r>
+              <a:rPr lang="zh-CN" sz="1800"/>
+              <a:t>© 2026 Agile培训计划. 保留所有权利.</a:t>
+            </a:r>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+    </p:spTree>
+  </p:cSld>
+</p:sld>
+
+</p:presentation>

@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agile培训计划 - 一小时掌握敏捷基础与实践</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+        
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .card {
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #3182CE;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 12px;
+            width: 2px;
+            height: calc(100% + 20px);
+            background-color: #E2E8F0;
+        }
+        
+        .timeline-item:last-child::after {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- 导航栏 -->
+    <nav class="bg-white shadow-md fixed w-full z-10">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <i class="fa fa-rocket text-blue-600 text-2xl"></i>
+                    <span class="font-bold text-xl text-blue-600">Agile培训</span>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#overview" class="text-gray-600 hover:text-blue-600 transition-colors">培训目标</a>
+                    <a href="#agile-basics" class="text-gray-600 hover:text-blue-600 transition-colors">Agile基础</a>
+                    <a href="#jira-usage" class="text-gray-600 hover:text-blue-600 transition-colors">Jira使用</a>
+                    <a href="#agile-meetings" class="text-gray-600 hover:text-blue-600 transition-colors">敏捷会议</a>
+                    <a href="#faq" class="text-gray-600 hover:text-blue-600 transition-colors">问答</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-gray-600 hover:text-blue-600">
+                        <i class="fa fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- 移动端菜单 -->
+            <div id="mobile-menu" class="md:hidden hidden mt-4 pb-2">
+                <a href="#overview" class="block py-2 text-gray-600 hover:text-blue-600 transition-colors">培训目标</a>
+                <a href="#agile-basics" class="block py-2 text-gray-600 hover:text-blue-600 transition-colors">Agile基础</a>
+                <a href="#jira-usage" class="block py-2 text-gray-600 hover:text-blue-600 transition-colors">Jira使用</a>
+                <a href="#agile-meetings" class="block py-2 text-gray-600 hover:text-blue-600 transition-colors">敏捷会议</a>
+                <a href="#faq" class="block py-2 text-gray-600 hover:text-blue-600 transition-colors">问答</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <header class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white pt-24 pb-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Agile培训计划</h1>
+            <p class="text-xl md:text-2xl opacity-90 mb-8">一小时掌握敏捷基础与实践</p>
+            <a href="#overview" class="bg-white text-blue-600 font-medium py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow inline-flex items-center">
+                <span>开始学习</span>
+                <i class="fa fa-arrow-down ml-2"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- 主内容 -->
+    <main class="container mx-auto px-4 py-12">
+        <!-- 培训目标 -->
+        <section id="overview" class="section mb-16">
+            <div class="flex items-center mb-6">
+                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                    <i class="fa fa-bullseye text-blue-600 text-xl"></i>
+                </div>
+                <h2 class="text-3xl font-bold">培训目标</h2>
+            </div>
+            <div class="bg-white rounded-xl shadow-md p-6">
+                <p class="text-lg leading-relaxed">
+                    帮助团队成员理解Agile核心概念，掌握Jira基本操作，熟悉敏捷会议流程，为团队的敏捷实践奠定基础。
+                </p>
+                
+                <div class="mt-8">
+                    <h3 class="text-xl font-semibold mb-4">培训大纲（60分钟）</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-blue-50 rounded-lg p-4 border-l-4 border-blue-500">
+                            <h4 class="font-semibold text-blue-700 mb-2">15分钟</h4>
+                            <p>Agile基础知识</p>
+                        </div>
+                        <div class="bg-green-50 rounded-lg p-4 border-l-4 border-green-500">
+                            <h4 class="font-semibold text-green-700 mb-2">20分钟</h4>
+                            <p>Jira的使用</p>
+                        </div>
+                        <div class="bg-purple-50 rounded-lg p-4 border-l-4 border-purple-500">
+                            <h4 class="font-semibold text-purple-700 mb-2">25分钟</h4>
+                            <p>Agile会议 + 问答</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Agile基础知识 -->
+        <section id="agile-basics" class="section mb-16">
+            <div class="flex items-center mb-6">
+                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                    <i class="fa fa-book text-blue-600 text-xl"></i>
+                </div>
+                <h2 class="text-3xl font-bold">Agile基础知识</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Agile起源与发展 -->
+                <div class="card bg-white rounded-xl shadow-md p-6">
+                    <h3 class="text-xl font-semibold mb-4 flex items-center">
+                        <i class="fa fa-history text-blue-500 mr-2"></i>
+                        Agile起源与发展
+                    </h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>2001年敏捷宣言的诞生</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>传统瀑布模型的局限性</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Agile的适用场景</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Agile核心价值观 -->
+                <div class="card bg-white rounded-xl shadow-md p-6">
+                    <h3 class="text-xl font-semibold mb-4 flex items-center">
+                        <i class="fa fa-heart text-red-500 mr-2"></i>
+                        Agile核心价值观
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fa fa-arrow-right text-blue-500 mt-1 mr-2"></i>
+                            <span><strong>个体与互动</strong> 高于 流程与工具</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-arrow-right text-blue-500 mt-1 mr-2"></i>
+                            <span><strong>工作的软件</strong> 高于 详尽的文档</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-arrow-right text-blue-500 mt-1 mr-2"></i>
+                            <span><strong>客户合作</strong> 高于 合同谈判</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-arrow-right text-blue-500 mt-1 mr-2"></i>
+                            <span><strong>响应变化</strong> 高于 遵循计划</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Scrum框架概览 -->
+                <div class="card bg-white rounded-xl shadow-md p-6">
+                    <h3 class="text-xl font-semibold mb-4 flex items-center">
+                        <i class="fa fa-sitemap text-green-500 mr-2"></i>
+                        Scrum框架概览
+                    </h3>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-medium text-gray-700 mb-2">三个角色</h4>
+                            <ul class="pl-5 list-disc space-y-1">
+                                <li>Product Owner</li>
+                                <li>Scrum Master</li>
+                                <li>开发团队</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-gray-700 mb-2">三个工件</h4>
+                            <ul class="pl-5 list-disc space-y-1">
+                                <li>Product Backlog</li>
+                                <li>Sprint Backlog</li>
+                                <li>Increment</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-gray-700 mb-2">五个事件</h4>
+                            <ul class="pl-5 list-disc space-y-1">
+                                <li>Sprint规划</li>
+                                <li>每日站会</li>
+                                <li>Sprint评审</li>
+                                <li>Sprint回顾</li>
+                                <li>Sprint</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 敏捷估算与计划 -->
+                <div class="card bg-white rounded-xl shadow-md p-6">
+                    <h3 class="text-xl font-semibold mb-4 flex items-center">
+                        <i class="fa fa-calculator text-purple-500 mr-2"></i>
+                        敏捷估算与计划
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-purple-100 p-2 rounded-full mr-3">
+                                <i class="fa fa-star text-purple-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">故事点与相对估算</h4>
+                                <p class="text-gray-600 text-sm">使用相对大小而非绝对时间进行估算</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                <i class="fa fa-tachometer text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">速度（Velocity）的概念与应用</h4>
+                                <p class="text-gray-600 text-sm">团队在一个Sprint内完成的故事点总数</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-green-100 p-2 rounded-full mr-3">
+                                <i class="fa fa-line-chart text-green-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">燃尽图（Burndown Chart）的解读</h4>
+                                <p class="text-gray-600 text-sm">可视化Sprint进度的工具</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Jira的使用 -->
+        <section id="jira-usage" class="section mb-16">
+            <div class="flex items-center mb-6">
+                <div class="bg-green-100 p-3 rounded-full mr-4">
+                    <i class="fa fa-ticket text-green-600 text-xl"></i>
+                </div>
+                <h2 class="text-3xl font-bold">Jira的使用</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Jira基础导航 -->
+                <div class="card bg-white rounded-xl shadow-md p-6">
+                    <h3 class="text-xl font-semibold mb-4 flex items-center">
+                        <i class="fa fa-compass text-green-500 mr-2"></i>
+                        Jira基础导航
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fa fa-desktop text-green-500 mt-1 mr-2"></i>
+                            <span>项目概览与仪表盘</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-exchange text-green-500 mt-1 mr-2"></i>
+                            <span>问题类型与状态流</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-filter text-green-500 mt-1 mr-2"></i>
+                            <span>过滤器与看板视图</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- 创建与管理工作项 -->
+                <div class="card bg-white rounded-xl shadow-md p-6">
+                    <h3 class="text-xl font-semibold mb-4 flex items-center">
+                        <i class="fa fa-plus-circle text-green-500 mr-2"></i>
+                        创建与管理工作项
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fa fa-file-text-o text-green-500 mt-1 mr-2"></i>
+                            <span>创建用户故事（User Story）</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-list-ul text-green-500 mt-1 mr-2"></i>
+                            <span>分解任务（Task）与子任务</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-bug text-green-500 mt-1 mr-2"></i>
+                            <span>关联缺陷（Bug）与故事</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-user-o text-green-500 mt-1 mr-2"></i>
+                            <span>分配负责人与设置截止日期</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Sprint管理 -->
+                <div class="card bg-white rounded-xl shadow-md p-6">
+                    <h3 class="text-xl font-semibold mb-4 flex items-center">
+                        <i class="fa fa-calendar-check-o text-green-500 mr-2"></i>
+                        Sprint管理
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fa fa-plus-square-o text-green-500 mt-1 mr-2"></i>
+                            <span>创建Sprint与设置时间盒</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-arrow-right text-green-500 mt-1 mr-2"></i>
+                            <span>从Product Backlog规划Sprint</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-refresh text-green-500 mt-1 mr-2"></i>
+                            <span>每日更新任务状态</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-square-o text-green-500 mt-1 mr-2"></i>
+                            <span>Sprint结束与回顾</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- 报表与度量 -->
+                <div class="card bg-white rounded-xl shadow-md p-6">
+                    <h3 class="text-xl font-semibold mb-4 flex items-center">
+                        <i class="fa fa-bar-chart text-green-500 mr-2"></i>
+                        报表与度量
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fa fa-area-chart text-green-500 mt-1 mr-2"></i>
+                            <span>燃尽图与燃耗图</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-line-chart text-green-500 mt-1 mr-2"></i>
+                            <span>速度报告</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-pie-chart text-green-500 mt-1 mr-2"></i>
+                            <span>控制图与累积流图</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Agile相关会议介绍 -->
+        <section id="agile-meetings" class="section mb-16">
+            <div class="flex items-center mb-6">
+                <div class="bg-purple-100 p-3 rounded-full mr-4">
+                    <i class="fa fa-users text-purple-600 text-xl"></i>
+                </div>
+                <h2 class="text-3xl font-bold">Agile相关会议介绍</h2>
+            </div>
+            
+            <div class="space-y-8">
+                <!-- Sprint规划会议 -->
+                <div class="card bg-white rounded-xl shadow-md p-6">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                        <h3 class="text-xl font-semibold flex items-center">
+                            <i class="fa fa-calendar-plus-o text-purple-500 mr-2"></i>
+                            Sprint规划会议
+                        </h3>
+                        <span class="bg-purple-100 text-purple-700 text-sm font-medium py-1 px-3 rounded-full">2小时/两周Sprint</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div>
+                            <h4 class="font-medium text-gray-700 mb-2">目的</h4>
+                            <p>确定Sprint目标与选择待办项</p>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-gray-700 mb-2">参与者</h4>
+                            <p>全体Scrum团队</p>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-gray-700 mb-2">流程</h4>
+                            <p>澄清需求 → 估算 → 承诺</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 每日站会 -->
+                <div class="card bg-white rounded-xl shadow-md p-6">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                        <h3 class="text-xl font-semibold flex items-center">
+                            <i class="fa fa-comments-o text-blue-500 mr-2"></i>
+                            每日站会
+                        </h3>
+                        <span class="bg-blue-100 text-blue-700 text-sm font-medium py-1 px-3 rounded-full">15分钟</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div>
+                            <h4 class="font-medium text-gray-700 mb-2">目的</h4>
+                            <p>同步进度，识别障碍</p>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-gray-700 mb-2">参与者</h4>
+                            <p>全体Scrum团队</p>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-gray-700 mb-2">三个问题</h4>
+                            <p>完成了什么？计划做什么？遇到什么障碍？</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sprint评审会议 -->
+                <div class="card bg-white rounded-xl shadow-md p-6">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                        <h3 class="text-xl font-semibold flex items-center">
+                            <i class="fa fa-check-circle-o text-green-500 mr-2"></i>
+                            Sprint评审会议
+                        </h3>
+                        <span class="bg-green-100 text-green-700 text-sm font-medium py-1 px-3 rounded-full">1小时/两周Sprint</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div>
+                            <h4 class="font-medium text-gray-700 mb-2">目的</h4>
+                            <p>展示增量，获取反馈</p>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-gray-700 mb-2">参与者</h4>
+                            <p>Scrum团队 + 产品负责人 + 相关干系人</p>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-gray-700 mb-2">流程</h4>
+                            <p>演示增量 → 收集反馈 → 调整Product Backlog</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sprint回顾会议 -->
+                <div class="card bg-white rounded-xl shadow-md p-6">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                        <h3 class="text-xl font-semibold flex items-center">
+                            <i class="fa fa-refresh text-orange-500 mr-2"></i>
+                            Sprint回顾会议
+                        </h3>
+                        <span class="bg-orange-100 text-orange-700 text-sm font-medium py-1 px-3 rounded-full">1小时/两周Sprint</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div>
+                            <h4 class="font-medium text-gray-700 mb-2">目的</h4>
+                            <p>持续改进团队流程</p>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-gray-700 mb-2">参与者</h4>
+                            <p>全体Scrum团队</p>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-gray-700 mb-2">流程</h4>
+                            <p>回顾做得好的 → 待改进的 → 制定改进计划</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 产品待办项梳理会议 -->
+                <div class="card bg-white rounded-xl shadow-md p-6">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                        <h3 class="text-xl font-semibold flex items-center">
+                            <i class="fa fa-list-o text-indigo-500 mr-2"></i>
+                            产品待办项梳理会议
+                        </h3>
+                        <span class="bg-indigo-100 text-indigo-700 text-sm font-medium py-1 px-3 rounded-full">按需召开</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div>
+                            <h4 class="font-medium text-gray-700 mb-2">目的</h4>
+                            <p>优化Product Backlog</p>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-gray-700 mb-2">参与者</h4>
+                            <p>Product Owner + 开发团队</p>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-gray-700 mb-2">活动</h4>
+                            <p>添加、移除、重排、细化待办项</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 互动问答与实践演示 -->
+        <section id="faq" class="section mb-16">
+            <div class="flex items-center mb-6">
+                <div class="bg-yellow-100 p-3 rounded-full mr-4">
+                    <i class="fa fa-question-circle text-yellow-600 text-xl"></i>
+                </div>
+                <h2 class="text-3xl font-bold">互动问答与实践演示</h2>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-md p-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="card bg-yellow-50 rounded-lg p-5 border-t-4 border-yellow-400">
+                        <div class="flex justify-center mb-4">
+                            <div class="bg-yellow-100 p-3 rounded-full">
+                                <i class="fa fa-comments text-yellow-600 text-2xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-semibold text-center mb-3">常见问题解答</h3>
+                        <p class="text-center text-gray-600">针对团队成员在敏捷实践中遇到的常见问题进行解答</p>
+                    </div>
+                    
+                    <div class="card bg-blue-50 rounded-lg p-5 border-t-4 border-blue-400">
+                        <div class="flex justify-center mb-4">
+                            <div class="bg-blue-100 p-3 rounded-full">
+                                <i class="fa fa-desktop text-blue-600 text-2xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-semibold text-center mb-3">Jira实际操作演示</h3>
+                        <p class="text-center text-gray-600">现场演示Jira的关键功能和最佳实践</p>
+                    </div>
+                    
+                    <div class="card bg-green-50 rounded-lg p-5 border-t-4 border-green-400">
+                        <div class="flex justify-center mb-4">
+                            <div class="bg-green-100 p-3 rounded-full">
+                                <i class="fa fa-lightbulb-o text-green-600 text-2xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-semibold text-center mb-3">敏捷实践小贴士</h3>
+                        <p class="text-center text-gray-600">分享实用的敏捷实践技巧和经验</p>
+                    </div>
+                </div>
+                
+                <div class="mt-8">
+                    <h3 class="text-xl font-semibold mb-4">培训准备建议</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>提前准备Jira测试环境账号</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>准备团队实际项目的案例</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>制作简洁的幻灯片或培训材料</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>准备互动式问答环节的问题</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="mt-8">
+                    <h3 class="text-xl font-semibold mb-4">后续支持</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fa fa-link text-blue-500 mt-1 mr-2"></i>
+                            <span>提供Agile学习资源链接</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-user-o text-blue-500 mt-1 mr-2"></i>
+                            <span>安排一对一Jira操作指导</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-feedback text-blue-500 mt-1 mr-2"></i>
+                            <span>建立团队敏捷实践反馈机制</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center space-x-2 mb-2">
+                        <i class="fa fa-rocket text-blue-400 text-2xl"></i>
+                        <span class="font-bold text-xl">Agile培训</span>
+                    </div>
+                    <p class="text-gray-400">一小时掌握敏捷基础与实践</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#overview" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fa fa-home text-xl"></i>
+                    </a>
+                    <a href="#agile-basics" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fa fa-book text-xl"></i>
+                    </a>
+                    <a href="#jira-usage" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fa fa-ticket text-xl"></i>
+                    </a>
+                    <a href="#agile-meetings" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fa fa-users text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
+                <p>&copy; 2026 Agile培训计划. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // 移动端菜单切换
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // 滚动动画
+        function checkVisibility() {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+                if (rect.top <= windowHeight * 0.8) {
+                    section.classList.add('visible');
+                }
+            });
+        }
+        
+        // 初始检查
+        checkVisibility();
+        
+        // 滚动时检查
+        window.addEventListener('scroll', checkVisibility);
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    // 关闭移动端菜单
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
